@@ -4,6 +4,7 @@ import { LandingHero } from "@/pages/welcome";
 import { TestimonialsSectionDemo } from "@/All Components /testimony";
 import  LandingPageClient  from "@/pages/landing"
 import NavHeader from "@/components/ui/nav-header"
+import { Footer7 } from "@/All Components /footer";
 
 export default async function Home() {
   return (
@@ -13,6 +14,8 @@ export default async function Home() {
       <LandingHero/>
      <TestimonialsSectionDemo/>
     </LandingPageClient>
+    <Footer7/>
+    
     </>
     
   
