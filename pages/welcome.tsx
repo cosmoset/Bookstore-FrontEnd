@@ -13,13 +13,13 @@ const exampleImages = [
     title: "A Black and White Photo of a Woman Brushing Her Teeth",
   },
   {
-    url: "https://images.unsplash.com/photo-1640680608781-2e4199dd1579?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "https://www.jaferbooks.com/resource/img/Becoming_Michelle_Obama.jpg",
     link: "https://unsplash.com/photos/a-painting-of-a-palm-leaf-on-a-multicolored-background-AaNPwrSNOFE",
     title: "Neon Palm",
     author: "Tim Mossholder",
   },
   {
-    url: "https://images.unsplash.com/photo-1726083085160-feeb4e1e5b00?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "https://www.ethiobooks.com/cdn/shop/products/f9a0fd6c449d63fa540e45e75fc5a904_1024x1024.jpg?v=1736453036",
     link: "https://unsplash.com/photos/a-blurry-photo-of-a-crowd-of-people-UgbxzloNGsc",
     author: "ANDRII SOLOK",
     title: "A blurry photo of a crowd of people",
@@ -31,19 +31,19 @@ const exampleImages = [
     title: "Rippling Crystal Blue Water",
   },
   {
-    url: "https://images.unsplash.com/photo-1624344965199-ed40391d20f2?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "https://www.ethiobooks.com/cdn/shop/products/c4c45430092b1f67c530c6fb5fa5a6be_1024x1024.jpg?v=1736452933",
     link: "https://unsplash.com/de/fotos/mann-im-schwarzen-hemd-unter-blauem-himmel-m8RDNiuEXro",
     author: "Serhii Tyaglovsky",
     title: "Mann im schwarzen Hemd unter blauem Himmel",
   },
   {
-    url: "https://images.unsplash.com/photo-1689553079282-45df1b35741b?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "https://www.jaferbooks.com/resource/img/Becoming_Michelle_Obama.jpg",
     link: "https://unsplash.com/photos/a-woman-with-a-flower-crown-on-her-head-0S3muIttbsY",
     author: "Vladimir Yelizarov",
     title: "A women with a flower crown on her head",
   },
   {
-    url: "https://images.unsplash.com/photo-1721968317938-cf8c60fccd1a?q=80&w=2728&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "https://www.jaferbooks.com/resource/img/Becoming_Michelle_Obama.jpg",
     title: "A blurry photo of white flowers in a field",
     author: "Eugene Golovesov",
     link: "https://unsplash.com/photos/a-blurry-photo-of-white-flowers-in-a-field-6qbx0lzGPyc",
@@ -138,7 +138,7 @@ function LandingHero() {
           initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.2, ease: "easeOut", delay: 0.3 }}
         >
-          <span>Read your </span>
+          <span>Choose your </span>
           <LayoutGroup>
             <motion.span layout className="flex whitespace-pre">
               <motion.span
@@ -146,21 +146,21 @@ function LandingHero() {
                 className="flex whitespace-pre"
                 transition={{ type: "spring", damping: 30, stiffness: 400 }}
               >
-                Favourite{" "}
+                Genre{" "}
               </motion.span>
               <TextRotate
                 texts={[
                   "fantasy",
-                  "fun",
-                  "lovely ♥",
-                  "weird",
-                  "🪩 funky",
+                  "Religious",
+                  "Romance ♥",
+                  "comedy",
+                  "🪩 Poltics",
                   "💃🕺",
-                  "sexy",
                   "mystery",
-                  "go 🚀",
-                  "🔥🔥🔥",
-                  "over-animated?",
+
+                  "Kids 🚀",
+                  "fiction 🔥🔥🔥",
+                  "Biography?",
                   "science ✨",
                   "Action 🤘",
                 ]}
@@ -179,8 +179,9 @@ function LandingHero() {
           initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.2, ease: "easeOut", delay: 0.5 }}
         >
-          with a growing library of ready-to-use react components &
-          microinteractions. free & open source.
+          Welcome , your haven for books! Explore diverse genres, discover hidden gems, and 
+          connect with fellow readers. 
+          Your next great adventure awaits!
         </motion.p>
 
         <div className="flex flex-row justify-center space-x-4 items-center mt-10 sm:mt-16 md:mt-20 lg:mt-20 text-xs">
@@ -200,7 +201,7 @@ function LandingHero() {
             }}
           >
             <Link href="/docs/introduction">
-              Check docs <span className="font-serif ml-1">→</span>
+              Explore <span className="font-serif ml-1">→</span>
             </Link>
           </motion.button>
           <motion.button
@@ -218,7 +219,7 @@ function LandingHero() {
               transition: { type: "spring", damping: 30, stiffness: 400 },
             }}
           >
-            <Link href="https://github.com/danielpetho/fancy">★ on GitHub</Link>
+            <Link href="https://github.com/danielpetho/fancy">★ Join us</Link>
           </motion.button>
         </div>
       </div>

@@ -43,7 +43,7 @@ const Footer7 = ({
     url: "https://www.shadcnblocks.com",
     src: "https://shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg",
     alt: "logo",
-    title: "Shadcnblocks.com",
+    title: "Bookify",
   },
 }: Footer7Props) => {
   return (
@@ -64,8 +64,8 @@ const Footer7 = ({
               <h2 className="text-xl font-semibold">{logo.title}</h2>
             </div>
             <p className="text-sm text-muted-foreground text-center lg:text-left">
-              A collection of 100+ responsive HTML templates for your startup
-              business or side project.
+              A collection of 100+ books for your to
+              enjoy and learn.
             </p>
             <ul className="flex items-center space-x-6 text-muted-foreground">
               <li className="hover:text-primary">
@@ -109,7 +109,7 @@ const Footer7 = ({
           </div>
         </div>
         <div className="mt-16 flex flex-col items-center gap-4 border-t pt-8 text-sm text-muted-foreground lg:flex-row lg:justify-between">
-          <p>© 2024 Shadcnblocks.com. All rights reserved.</p>
+          <p>© 2025 Bookify. All rights reserved.</p>
           <ul className="flex gap-4">
             <li className="hover:text-primary">
               <a href="#">Terms and Conditions</a>

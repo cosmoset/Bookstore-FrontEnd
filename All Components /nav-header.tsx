@@ -3,6 +3,14 @@
 import { SparklesText } from "@/components/ui/sparkletitle";
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import ButtonHover10 from "./button";
+import CartIcon from "@/components/ui/carticon";
+import Link from "next/link";
+import { InteractiveCheckoutDemo } from "@/All Components /cart";
+
+
+
+
 
 function NavHeader() {
   const [position, setPosition] = useState({
@@ -12,27 +20,34 @@ function NavHeader() {
   });
 
   return (
-    <div className="relative flex items-center px-4 py-2">
-    {/* Title on the left */}
-    <div className="mr-auto">
-      <SparklesText text="Bookify" />
-    </div>
-  
-    {/* Centered Navbar */}
-    <div className="absolute left-1/2 transform -translate-x-1/2">
-      <ul
-        className="relative flex w-fit rounded-full border-2 border-black bg-white p-1"
-        onMouseLeave={() => setPosition((pv) => ({ ...pv, opacity: 0 }))}
-      >
-        <Tab setPosition={setPosition}>Home</Tab>
-        <Tab setPosition={setPosition}>Pricing</Tab>
-        <Tab setPosition={setPosition}>About</Tab>
-        <Tab setPosition={setPosition}>Services</Tab>
-        <Tab setPosition={setPosition}>Contact</Tab>
-        <Cursor position={position} />
-      </ul>
-    </div>
+<div className="relative flex items-center justify-between px-4 py-2">
+  {/* Left-aligned title */}
+  <div className="mr-auto">
+    <SparklesText text="Bookify" />
   </div>
+
+  {/* Centered Navbar */}
+  <div className="absolute left-1/2 transform -translate-x-1/2">
+    <ul
+      className="relative flex w-fit rounded-full border-2 border-black bg-white p-1"
+      onMouseLeave={() => setPosition((pv) => ({ ...pv, opacity: 0 }))}
+    >
+      <Tab setPosition={setPosition}>Home</Tab>
+      <Tab setPosition={setPosition}>Pricing</Tab>
+      <Tab setPosition={setPosition}>About</Tab>
+      <Tab setPosition={setPosition}>Services</Tab>
+      <Tab setPosition={setPosition}>Contact</Tab>
+      <Cursor position={position} />
+    </ul>
+  </div>
+
+  {/* Right-aligned buttons container */}
+  <div className="ml-auto flex items-center gap-4">
+  <Link href="../cart" > <CartIcon/> </Link>
+    <Link href="https://github.com/danielpetho/fancy" > <ButtonHover10 /> </Link>
+    
+  </div>
+</div>
 
   );
 }
