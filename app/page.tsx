@@ -7,11 +7,13 @@ import NavHeader from "@/components/ui/nav-header"
 
 export default async function Home() {
   return (
+    <>
     <LandingPageClient>
       <NavHeader/>
       <LandingHero/>
      <TestimonialsSectionDemo/>
     </LandingPageClient>
+    </>
     
   
 
