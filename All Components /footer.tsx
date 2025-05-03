@@ -47,13 +47,13 @@ const Footer7 = ({
   },
 }: Footer7Props) => {
   return (
-    <section className="py-32 ">
-      <div className="containe bg-center self-center">
-        <div className="flex w-full flex-col items-center justify-between gap-10 text-center lg:flex-row lg:items-start lg:text-left">
-          <div className="flex w-full flex-col items-center justify-between gap-6 lg:items-start">
+    <section className="py-32 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col items-center justify-between gap-10 lg:flex-row lg:items-start">
+          <div className="flex flex-col items-center lg:items-start gap-6 max-w-xs">
             {/* Logo */}
-            <div className="flex items-center gap-2 lg:justify-start">
-              <a href="https://shadcnblocks.com">
+            <div className="flex items-center gap-2">
+              <a href={logo.url}>
                 <img
                   src={logo.src}
                   alt={logo.alt}
@@ -63,42 +63,42 @@ const Footer7 = ({
               </a>
               <h2 className="text-xl font-semibold">{logo.title}</h2>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground text-center lg:text-left">
               A collection of 100+ responsive HTML templates for your startup
               business or side project.
             </p>
             <ul className="flex items-center space-x-6 text-muted-foreground">
-              <li className="font-medium hover:text-primary">
+              <li className="hover:text-primary">
                 <a href="#">
-                <FaInstagram size={24} />
+                  <FaInstagram size={24} />
                 </a>
               </li>
-              <li className="font-medium hover:text-primary">
+              <li className="hover:text-primary">
                 <a href="#">
                   <FaFacebook size={24} />
                 </a>
               </li>
-              <li className="font-medium hover:text-primary">
+              <li className="hover:text-primary">
                 <a href="#">
                   <FaTwitter size={24} />
                 </a>
               </li>
-              <li className="font-medium hover:text-primary">
+              <li className="hover:text-primary">
                 <a href="#">
                   <FaLinkedin size={24} />
                 </a>
               </li>
             </ul>
           </div>
-          <div className="grid w-full grid-cols-3 gap-6 lg:gap-20">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-20 w-full max-w-2xl">
             {sections.map((section, sectionIdx) => (
-              <div key={sectionIdx}>
+              <div key={sectionIdx} className="text-center lg:text-left">
                 <h3 className="mb-6 font-bold">{section.title}</h3>
                 <ul className="space-y-4 text-sm text-muted-foreground">
                   {section.links.map((link, linkIdx) => (
                     <li
                       key={linkIdx}
-                      className="font-medium hover:text-primary"
+                      className="hover:text-primary"
                     >
                       <a href={link.href}>{link.name}</a>
                     </li>
@@ -108,14 +108,14 @@ const Footer7 = ({
             ))}
           </div>
         </div>
-        <div className="mt-8 flex flex-col justify-between gap-4 border-t pt-8 text-center text-sm font-medium text-muted-foreground lg:flex-row lg:items-center lg:text-left">
+        <div className="mt-16 flex flex-col items-center gap-4 border-t pt-8 text-sm text-muted-foreground lg:flex-row lg:justify-between">
           <p>© 2024 Shadcnblocks.com. All rights reserved.</p>
-          <ul className="flex justify-center gap-4 lg:justify-start">
+          <ul className="flex gap-4">
             <li className="hover:text-primary">
-              <a href="#"> Terms and Conditions</a>
+              <a href="#">Terms and Conditions</a>
             </li>
             <li className="hover:text-primary">
-              <a href="#"> Privacy Policy</a>
+              <a href="#">Privacy Policy</a>
             </li>
           </ul>
         </div>
