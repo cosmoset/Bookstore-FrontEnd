@@ -3,14 +3,14 @@ import Image from "next/image";
 import { LandingHero } from "@/pages/welcome";
 import { TestimonialsSectionDemo } from "@/All Components /testimony";
 import  LandingPageClient  from "@/pages/landing"
-import { HomeDemo } from "@/All Components /Navbar";
+import NavHeader from "@/components/ui/nav-header"
 
 export default async function Home() {
   return (
     <LandingPageClient>
-      <HomeDemo/>
+      <NavHeader/>
       <LandingHero/>
-      <TestimonialsSectionDemo/>
+     <TestimonialsSectionDemo/>
     </LandingPageClient>
     
   
