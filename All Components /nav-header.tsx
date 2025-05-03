@@ -1,5 +1,6 @@
 "use client"; 
 
+import { SparklesText } from "@/components/ui/sparkletitle";
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 
@@ -11,18 +12,28 @@ function NavHeader() {
   });
 
   return (
-    <ul
-      className="relative mx-auto flex w-fit rounded-full border-2 border-black bg-white p-1"
-      onMouseLeave={() => setPosition((pv) => ({ ...pv, opacity: 0 }))}
-    >
-      <Tab setPosition={setPosition}>Home</Tab>
-      <Tab setPosition={setPosition}>Pricing</Tab>
-      <Tab setPosition={setPosition}>About</Tab>
-      <Tab setPosition={setPosition}>Services</Tab>
-      <Tab setPosition={setPosition}>Contact</Tab>
+    <div className="relative flex items-center px-4 py-2">
+    {/* Title on the left */}
+    <div className="mr-auto">
+      <SparklesText text="Bookify" />
+    </div>
+  
+    {/* Centered Navbar */}
+    <div className="absolute left-1/2 transform -translate-x-1/2">
+      <ul
+        className="relative flex w-fit rounded-full border-2 border-black bg-white p-1"
+        onMouseLeave={() => setPosition((pv) => ({ ...pv, opacity: 0 }))}
+      >
+        <Tab setPosition={setPosition}>Home</Tab>
+        <Tab setPosition={setPosition}>Pricing</Tab>
+        <Tab setPosition={setPosition}>About</Tab>
+        <Tab setPosition={setPosition}>Services</Tab>
+        <Tab setPosition={setPosition}>Contact</Tab>
+        <Cursor position={position} />
+      </ul>
+    </div>
+  </div>
 
-      <Cursor position={position} />
-    </ul>
   );
 }
 

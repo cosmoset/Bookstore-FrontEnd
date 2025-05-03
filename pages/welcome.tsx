@@ -25,7 +25,7 @@ const exampleImages = [
     title: "A blurry photo of a crowd of people",
   },
   {
-    url: "https://images.unsplash.com/photo-1562016600-ece13e8ba570?q=80&w=2838&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "https://www.ethiobooks.com/cdn/shop/products/eae95e3f6d36ad58898915dbef98056c_506x.jpg?v=1736453079",
     link: "https://unsplash.com/photos/rippling-crystal-blue-water-9-OCsKoyQlk",
     author: "Wesley Tingey",
     title: "Rippling Crystal Blue Water",
@@ -138,7 +138,7 @@ function LandingHero() {
           initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.2, ease: "easeOut", delay: 0.3 }}
         >
-          <span>Make your </span>
+          <span>Read your </span>
           <LayoutGroup>
             <motion.span layout className="flex whitespace-pre">
               <motion.span
@@ -146,23 +146,23 @@ function LandingHero() {
                 className="flex whitespace-pre"
                 transition={{ type: "spring", damping: 30, stiffness: 400 }}
               >
-                website{" "}
+                Favourite{" "}
               </motion.span>
               <TextRotate
                 texts={[
-                  "fancy",
+                  "fantasy",
                   "fun",
                   "lovely ♥",
                   "weird",
                   "🪩 funky",
                   "💃🕺",
                   "sexy",
-                  "🕶️ cool",
+                  "mystery",
                   "go 🚀",
                   "🔥🔥🔥",
                   "over-animated?",
-                  "pop ✨",
-                  "rock 🤘",
+                  "science ✨",
+                  "Action 🤘",
                 ]}
                 mainClassName="overflow-hidden pr-3 text-[#0015ff] py-0 pb-2 md:pb-4 rounded-xl"
                 staggerDuration={0.03}
