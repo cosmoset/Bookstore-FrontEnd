@@ -7,7 +7,8 @@ import ButtonHover10 from "./button";
 import CartIcon from "@/components/uis/carticon";
 import Link from "next/link";
 import InteractiveCheckoutDemo from "@/app/cart/page";
-
+import Loginpage from "@/app/login/page"
+import { ShoppingCart } from "lucide-react"
 
 
 
@@ -35,15 +36,15 @@ function NavHeader() {
       <Tab setPosition={setPosition}>Pricing</Tab>
       <Tab setPosition={setPosition}>About</Tab>
       <Tab setPosition={setPosition}>Services</Tab>
-      <Tab setPosition={setPosition}>Contact</Tab>
+      <Tab setPosition={setPosition} >Contact</Tab>
       <Cursor position={position} />
     </ul>
   </div>
 
   {/* Right-aligned buttons container */}
   <div className="ml-auto flex items-center gap-4">
-  <Link href="/cart" > <CartIcon/> </Link>
-    <Link href="https://github.com/danielpetho/fancy" > <ButtonHover10 /> </Link>
+  <Link href="/cart" > <ShoppingCart/> </Link>
+    <Link href="/login" > <ButtonHover10 /> </Link>
     
   </div>
 </div>

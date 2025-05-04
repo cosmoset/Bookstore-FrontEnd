@@ -4,37 +4,37 @@ import { TestimonialsSection } from "@/components/uis/testimony/testimonials-wit
 const testimonials = [
   {
     author: {
-      name: "Emma Thompson",
-      handle: "@emmaai",
-      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
+      name: "Abebe Bekele",
+      handle: "@Abebe",
+      avatar: "https://thumbs.dreamstime.com/b/portrait-ethiopian-man-oromia-ethiopia-april-unidentified-thick-glasses-outside-his-home-oromia-65442758.jpg"
     },
-    text: "Using this AI platform has transformed how we handle data analysis. The speed and accuracy are unprecedented.",
-    href: "https://twitter.com/emmaai"
+    text: "I was amazed by the variety of books available! I found everything from popular bestsellers to rare indie titles",
+    href: "https://twitter.com"
   },
   {
     author: {
-      name: "David Park",
-      handle: "@davidtech",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+      name: "Mahder Assefa",
+      handle: "@Samri",
+      avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgrG2tegAw77uji1VDAfbJPfi_d386PtIjHA&s"
     },
-    text: "The API integration is flawless. We've reduced our development time by 60% since implementing this solution.",
+    text: "Their catalog includes everything from bestsellers to niche genres. I was particularly impressed with their collection of independent authors, which is often hard to find elsewhere.",
     href: "https://twitter.com/davidtech"
   },
   {
     author: {
-      name: "Sofia Rodriguez",
-      handle: "@sofiaml",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
+      name: "Meron Kebede",
+      handle: "@Nebiyou23",
+      avatar: "https://i.pinimg.com/736x/6b/2d/83/6b2d838b4219732700f773e1d60f7c4f.jpg"
     },
-    text: "Finally, an AI tool that actually understands context! The accuracy in natural language processing is impressive."
+    text: "Customer service is responsive and helpful. I had a minor issue with my order, and they resolved it quickly and efficiently."
   }
 ]
 
 export function TestimonialsSectionDemo() {
   return (
     <TestimonialsSection
-      title="Trusted by developers worldwide"
-      description="Join thousands of developers who are already building the future with our AI platform"
+      title="Trusted by Thousands"
+      description="At Bookify, we value the opinions of our readers! Our customers frequently share their experiences, helping fellow book lovers make informed choices."
       testimonials={testimonials}
     />
   )
