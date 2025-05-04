@@ -1,6 +1,7 @@
 import { InteractiveCheckout, Product } from "@/components/ui/interactive-checkout"
-
-import { Button } from "@/components/ui/buttoncart"
+import { Footer7 } from "@/All Components /footer";
+import NavHeader from "@/All Components /nav-header"
+import oromai from "@/images/img1.webp"
 
 const defaultProducts: Product[] = [
     {
@@ -8,7 +9,7 @@ const defaultProducts: Product[] = [
         name: "Book 1",
         price: 129.99,
         category: "Art",
-        image: "",
+        image: "https://www.ethiobooks.com/cdn/shop/products/4d22752d3ccfc450651ab464bce1c6b4_1024x1024.jpg?v=1736453757",
         color: "",
     },
     {
@@ -31,7 +32,17 @@ const defaultProducts: Product[] = [
 
 
 function InteractiveCheckoutDemo() {
-    return <InteractiveCheckout products={defaultProducts} />
+    return (
+        
+            <div>
+               
+                <InteractiveCheckout products={defaultProducts} />
+                <Footer7/>
+            </div>
+        
+    
+    );
 }
 
-export { InteractiveCheckoutDemo }
+
+export default InteractiveCheckoutDemo

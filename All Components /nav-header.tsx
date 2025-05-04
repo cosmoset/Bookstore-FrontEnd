@@ -6,8 +6,7 @@ import { motion } from "framer-motion";
 import ButtonHover10 from "./button";
 import CartIcon from "@/components/ui/carticon";
 import Link from "next/link";
-import { InteractiveCheckoutDemo } from "@/All Components /cart";
-
+import InteractiveCheckoutDemo from "@/app/cart/page";
 
 
 
@@ -43,7 +42,7 @@ function NavHeader() {
 
   {/* Right-aligned buttons container */}
   <div className="ml-auto flex items-center gap-4">
-  <Link href="../cart" > <CartIcon/> </Link>
+  <Link href="/cart" > <CartIcon/> </Link>
     <Link href="https://github.com/danielpetho/fancy" > <ButtonHover10 /> </Link>
     
   </div>
@@ -77,6 +76,7 @@ const Tab = ({
     >
       {children}
     </li>
+    
   );
 };
 
