@@ -1,4 +1,4 @@
-import { TestimonialsSection } from "@/components/ui/testimony/testimonials-with-marquee"
+import { TestimonialsSection } from "@/components/uis/testimony/testimonials-with-marquee"
 
 
 const testimonials = [

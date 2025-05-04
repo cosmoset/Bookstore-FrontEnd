@@ -3,8 +3,8 @@
 import { useEffect, useRef } from "react"
 import Link from "next/link"
 import { LayoutGroup, motion } from "framer-motion"
-import { TextRotate } from "../components/ui/text-rotate"
-import Floating, { FloatingElement } from "@/components/ui/parallax-floating"
+import { TextRotate } from "../components/uis/text-rotate"
+import Floating, { FloatingElement } from "@/components/uis/parallax-floating"
 
 const exampleImages = [
   {

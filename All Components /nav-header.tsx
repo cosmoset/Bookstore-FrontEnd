@@ -1,10 +1,10 @@
 "use client"; 
 
-import { SparklesText } from "@/components/ui/sparkletitle";
+import { SparklesText } from "@/components/uis/sparkletitle";
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import ButtonHover10 from "./button";
-import CartIcon from "@/components/ui/carticon";
+import CartIcon from "@/components/uis/carticon";
 import Link from "next/link";
 import InteractiveCheckoutDemo from "@/app/cart/page";
 
