@@ -4,7 +4,7 @@ import { TestimonialsSection } from "@/components/uis/testimony/testimonials-wit
 const testimonials = [
   {
     author: {
-      name: "Abebe Bekele",
+      name: "Aron Tsegaye",
       handle: "@Abebe",
       avatar: "https://thumbs.dreamstime.com/b/portrait-ethiopian-man-oromia-ethiopia-april-unidentified-thick-glasses-outside-his-home-oromia-65442758.jpg"
     },
