@@ -6,6 +6,7 @@ import  LandingPageClient  from "@/pages/landing"
 import NavHeader from "@/All Components /nav-header"
 import { Footer7 } from "@/All Components /footer";
 import InteractiveCheckoutDemo from "@/app/cart/page";
+import Showbiz from "./dona/page";
 
 
 export default async function Home() {
@@ -13,6 +14,7 @@ export default async function Home() {
   <LandingPageClient>
     <NavHeader/>
     <LandingHero/>
+    <Showbiz/>
     <TestimonialsSectionDemo/>
     <Footer7/>
   </LandingPageClient>
