@@ -1,6 +1,6 @@
-import { InteractiveCheckout, Product } from "@/components/uis/checkout/interactive-checkout"
-import { Footer7 } from "@/All Components /footer";
-import NavHeader from "@/All Components /nav-header"
+import { InteractiveCheckout, Product } from "@/AllComponents /uis/checkout/interactive-checkout"
+import { Footer7 } from "@/AllComponents /footer";
+import NavHeader from "@/AllComponents /nav-header"
 import oromai from "@/images/img1.webp"
 
 const defaultProducts: Product[] = [

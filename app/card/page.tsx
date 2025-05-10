@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { HeartIcon, PlusIcon } from "lucide-react";
-import NavHeader from "@/All Components /nav-header"
+import NavHeader from "@/AllComponents /nav-header"
 
 const products = [
   {
