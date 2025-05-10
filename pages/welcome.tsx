@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+
 import Link from "next/link"
 import { LayoutGroup, motion } from "framer-motion"
 import { TextRotate } from "../AllComponents /uis/checkout/text-rotate"
