@@ -1,7 +1,6 @@
 import { InteractiveCheckout, Product } from "@/AllComponents /uis/checkout/interactive-checkout"
 import { Footer7 } from "@/AllComponents /footer";
-import NavHeader from "@/AllComponents /nav-header"
-import oromai from "@/images/img1.webp"
+
 
 const defaultProducts: Product[] = [
     {
