@@ -1,10 +1,10 @@
 "use client"; 
 
-import { SparklesText } from "@/components/uis/sparkletitle";
+import { SparklesText } from "@/components/uis/checkout/sparkletitle";
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import ButtonHover10 from "./button";
-import CartIcon from "@/components/uis/carticon";
+import CartIcon from "@/components/uis/checkout/carticon";
 import Link from "next/link";
 import InteractiveCheckoutDemo from "@/app/cart/page";
 import Loginpage from "@/app/login/page"
@@ -34,7 +34,7 @@ function NavHeader() {
     >
       <Tab setPosition={setPosition}>Home</Tab>
       <Tab setPosition={setPosition}>Pricing</Tab>
-      <Tab setPosition={setPosition}>About</Tab>
+     <Link href="/about"> <Tab setPosition={setPosition}>About</Tab></Link>
       <Tab setPosition={setPosition}>Services</Tab>
       <Tab setPosition={setPosition} >Contact</Tab>
       <Cursor position={position} />

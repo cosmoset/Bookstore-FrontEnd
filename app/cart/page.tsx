@@ -1,4 +1,4 @@
-import { InteractiveCheckout, Product } from "@/components/uis/interactive-checkout"
+import { InteractiveCheckout, Product } from "@/components/uis/checkout/interactive-checkout"
 import { Footer7 } from "@/All Components /footer";
 import NavHeader from "@/All Components /nav-header"
 import oromai from "@/images/img1.webp"
