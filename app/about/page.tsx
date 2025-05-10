@@ -11,7 +11,7 @@ export default function AboutPage() {
           <div className="text-center text-white space-y-6">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">About Dating App</h1>
             <p className="text-lg md:text-xl opacity-90 max-w-3xl mx-auto">
-              We're on a mission to help people build meaningful connections and find love in a safe, fun environment.
+              We are on a mission to help people build meaningful connections and find love in a safe, fun environment.
             </p>
           </div>
         </div>
@@ -33,8 +33,8 @@ export default function AboutPage() {
                   different—a platform where genuine compatibility and shared values take center stage.
                 </p>
                 <p>
-                  Since our launch, we've helped thousands of couples find love and build lasting relationships. We're
-                  proud of the community we've created and the success stories that have emerged from our platform.
+                  Since our launch, we have helped thousands of couples find love and build lasting relationships. We are
+                  proud of the community we have created and the success stories that have emerged from our platform.
                 </p>
               </div>
             </div>
@@ -180,7 +180,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="text-xl font-semibold mb-2">Verified Profiles</h3>
                 <p className="text-muted-foreground">
-                  We verify all users to ensure you're connecting with real people. No fake profiles or bots.
+                  We verify all users to ensure you are connecting with real people. No fake profiles or bots.
                 </p>
               </div>
             </div>
