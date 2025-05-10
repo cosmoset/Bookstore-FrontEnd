@@ -8,46 +8,46 @@ import {
 import Link from "next/link";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
-type DressStyle = {
+type Booklangz = {
   title: string;
   slug: string;
 };
 
-const dressStylesData: DressStyle[] = [
+const BookslangData: Booklangz[] = [
   {
-    title: "Casual",
-    slug: "/shop?style=casual",
+    title: "English",
+    slug: "/shop?style=English",
   },
   {
-    title: "Formal",
-    slug: "/shop?style=formal",
+    title: "Amharic",
+    slug: "/shop?style=Amharic",
   },
   {
-    title: "Party",
-    slug: "/shop?style=party",
+    title: "Arabic",
+    slug: "/shop?style=arabic",
   },
   {
-    title: "Gym",
-    slug: "/shop?style=gym",
+    title: "Geez",
+    slug: "/shop?style=geez",
   },
 ];
 
-const DressStyleSection = () => {
+const BookStyleSection = () => {
   return (
     <Accordion type="single" collapsible defaultValue="filter-style">
       <AccordionItem value="filter-style" className="border-none">
         <AccordionTrigger className="text-black font-bold text-xl hover:no-underline p-0 py-0.5">
-          Dress Style
+          Book Language
         </AccordionTrigger>
         <AccordionContent className="pt-4 pb-0">
           <div className="flex flex-col text-black/60 space-y-0.5">
-            {dressStylesData.map((dStyle, idx) => (
+            {BookslangData.map((bstyle, idx) => (
               <Link
                 key={idx}
-                href={dStyle.slug}
+                href={bstyle.slug}
                 className="flex items-center justify-between py-2"
               >
-                {dStyle.title} <MdKeyboardArrowRight />
+                {bstyle.title} <MdKeyboardArrowRight />
               </Link>
             ))}
           </div>
@@ -57,4 +57,4 @@ const DressStyleSection = () => {
   );
 };
 
-export default DressStyleSection;
+export default BookStyleSection;

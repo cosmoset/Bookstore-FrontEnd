@@ -2,13 +2,13 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import React from "react";
 
-type DressStyleCardProps = {
+type BookStyleCardProps = {
   title: string;
   url: string;
   className?: string;
 };
 
-const DressStyleCard = ({ title, url, className }: DressStyleCardProps) => {
+const BookStyleCard = ({ title, url, className }: BookStyleCardProps) => {
   return (
     <Link
       href={url}
@@ -22,4 +22,4 @@ const DressStyleCard = ({ title, url, className }: DressStyleCardProps) => {
   );
 };
 
-export default DressStyleCard;
+export default BookStyleCard;

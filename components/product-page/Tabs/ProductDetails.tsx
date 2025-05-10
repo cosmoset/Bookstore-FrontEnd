@@ -7,20 +7,36 @@ export type SpecItem = {
 
 const specsData: SpecItem[] = [
   {
-    label: " Material composition",
-    value: "100% Cotton",
+    label: "Format",
+    value: "Hardcover",
   },
   {
-    label: "Care instructions",
-    value: "Machine wash warm, tumble dry",
+    label: "Pages",
+    value: "320 pages",
   },
   {
-    label: "Fit type",
-    value: "Classic Fit",
+    label: "Language",
+    value: "English",
   },
   {
-    label: "Pattern",
-    value: "Solid",
+    label: "ISBN",
+    value: "978-3-16-148410-0",
+  },
+  {
+    label: "Publisher",
+    value: "Penguin Random House",
+  },
+  {
+    label: "Publication Date",
+    value: "March 5, 2024",
+  },
+  {
+    label: "Dimensions",
+    value: "6.4 x 1.2 x 9.5 inches",
+  },
+  {
+    label: "Weight",
+    value: "1.2 pounds",
   },
 ];
 

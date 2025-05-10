@@ -9,24 +9,32 @@ type Category = {
 
 const categoriesData: Category[] = [
   {
-    title: "T-shirts",
-    slug: "/shop?category=t-shirts",
+    title: "Fiction",
+    slug: "/shop?genre=fiction",
   },
   {
-    title: "Shorts",
-    slug: "/shop?category=shorts",
+    title: "Non-Fiction",
+    slug: "/shop?genre=non-fiction",
   },
   {
-    title: "Shirts",
-    slug: "/shop?category=shirts",
+    title: "Mystery",
+    slug: "/shop?genre=mystery",
   },
   {
-    title: "Hoodie",
-    slug: "/shop?category=hoodie",
+    title: "Fantasy",
+    slug: "/shop?genre=fantasy",
   },
   {
-    title: "Jeans",
-    slug: "/shop?category=jeans",
+    title: "Science Fiction",
+    slug: "/shop?genre=science-fiction",
+  },
+  {
+    title: "Biography",
+    slug: "/shop?genre=biography",
+  },
+  {
+    title: "Children's Books",
+    slug: "/shop?genre=children",
   },
 ];
 

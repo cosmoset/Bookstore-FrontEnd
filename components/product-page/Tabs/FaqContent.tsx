@@ -13,35 +13,37 @@ type FaqItem = {
 
 const faqsData: FaqItem[] = [
   {
-    question: "What is the material of the t-shirt?",
-    answer:
-      "Provide details about the fabric type (e.g., cotton, polyester, blend), weight, and any specific features.",
+    question: "How do I find a specific book in your store?",
+    answer: "You can search by title, author, or ISBN using our search bar. Our staff can also help you locate books in our physical store or recommend similar titles."
   },
   {
-    question: "What are the care instructions for the t-shirt?",
-    answer:
-      "Outline recommended washing, drying, and ironing methods to maintain quality and longevity.",
+    question: "Do you offer book recommendations?",
+    answer: "Yes! Our knowledgeable staff provides personalized recommendations based on your reading preferences. You can also browse our curated collections and monthly picks."
   },
   {
-    question: "What is the design or print on the t-shirt made of?",
-    answer:
-      "Explain the material used for the design (e.g., vinyl, screen print, embroidery) and its durability.",
+    question: "Can I order books that aren't currently in stock?",
+    answer: "Absolutely. We can special order most titles and typically receive them within 3-7 business days. We'll notify you when your book arrives."
   },
   {
-    question: "Is the t-shirt unisex or designed for specific genders?",
-    answer:
-      "Indicate whether the shirt is suitable for both men and women or targeted towards a particular gender.",
+    question: "Do you buy back used books?",
+    answer: "We offer store credit for gently used books in good condition. Bring them to our buyback counter for evaluation during business hours."
   },
   {
-    question: "What are the shipping options and costs?",
-    answer:
-      "Provide information about shipping methods, estimated delivery times, and associated fees.",
+    question: "What are your shipping options and delivery times?",
+    answer: "We offer standard (5-7 days), expedited (2-3 days), and in-store pickup. Local delivery is available within 10 miles for a small fee."
   },
   {
-    question: "What is the return policy for the t-shirt?",
-    answer:
-      "Outline the return window, conditions, and refund or exchange procedures.",
+    question: "What is your return policy for books?",
+    answer: "New books can be returned within 14 days with receipt. For damaged/defective books, we offer exchanges at any time. Unfortunately, we cannot accept returns on used books."
   },
+  {
+    question: "Do you host author events or book clubs?",
+    answer: "Yes! We host regular author readings, signings, and book club meetings. Check our events calendar or join our mailing list for updates."
+  },
+  {
+    question: "Do you offer gift wrapping services?",
+    answer: "We provide complimentary gift wrapping for all purchases during the holiday season, and year-round for a small fee. Gift receipts are always available."
+  }
 ];
 
 const FaqContent = () => {
