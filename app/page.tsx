@@ -1,9 +1,6 @@
 import { LandingHero } from "@/pages/welcome";
 import { TestimonialsSectionDemo } from "@/AllComponents /testimony";
 import  LandingPageClient  from "@/pages/landing"
-import NavHeader from "@/AllComponents /nav-header"
-import { Footer7 } from "@/AllComponents /footer";
-import InteractiveCheckoutDemo from "@/app/cart/page";
 import { Product } from "@/types/product.types";
 import ProductListSec from "@/components/common/ProductListSec";
 import { Review } from "@/types/review.types";
