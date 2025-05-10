@@ -103,7 +103,7 @@ export default function LoginPage() {
             className="text-center pb-6"
           >
             <span className="text-sm text-gray-600">
-              Don't have an account?{" "}
+              Dont have an account?{" "}
               <Link href="/signup" className="text-purple-600 hover:text-purple-700 hover:underline transition-colors">
                 Sign up
               </Link>
