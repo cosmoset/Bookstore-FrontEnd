@@ -1,10 +1,12 @@
-import { TestimonialsSection } from "@/AllComponents /uis/testimony/testimonials-with-marquee"
+
+
+import { TestimonialsSection } from "@/components/layout/testimony/testimonials-with-marquee"
 
 
 const testimonials = [
   {
     author: {
-      name: "Aron Tsegaye",
+      name: "Aron ",
       handle: "@Abebe",
       avatar: "https://thumbs.dreamstime.com/b/portrait-ethiopian-man-oromia-ethiopia-april-unidentified-thick-glasses-outside-his-home-oromia-65442758.jpg"
     },
@@ -23,7 +25,7 @@ const testimonials = [
   {
     author: {
       name: "Meron Kebede",
-      handle: "@Nebiyou23",
+      handle: "@Nana23",
       avatar: "https://i.pinimg.com/736x/6b/2d/83/6b2d838b4219732700f773e1d60f7c4f.jpg"
     },
     text: "Customer service is responsive and helpful. I had a minor issue with my order, and they resolved it quickly and efficiently."

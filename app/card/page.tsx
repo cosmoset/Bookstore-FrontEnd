@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { HeartIcon, PlusIcon } from "lucide-react";
-import NavHeader from "@/AllComponents /nav-header"
+
 
 const products = [
   {
@@ -38,7 +38,7 @@ const products = [
 export default function ProductCard() {
   return (
     <>
-      <NavHeader />
+      
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
         {products.map((product) => (
           <div

@@ -13,7 +13,7 @@ import Image from "next/image";
 import InputGroup from "@/components/ui/input-group";
 import ResTopNavbar from "./ResTopNavbar";
 import CartBtn from "./CartBtn";
-import { SparklesText } from "@/AllComponents /uis/checkout/sparkletitle";
+import { SparklesText } from "@/components/layout/Hero/sparkletitle";
 
 const data: NavMenu = [
   {

@@ -3,8 +3,8 @@
 
 import Link from "next/link"
 import { LayoutGroup, motion } from "framer-motion"
-import { TextRotate } from "../AllComponents /uis/checkout/text-rotate"
-import Floating, { FloatingElement } from "@/AllComponents /uis/checkout/parallax-floating"
+import { TextRotate } from "../components/layout/Hero/text-rotate"
+import Floating, { FloatingElement } from "@/components/layout/Hero/parallax-floating"
 
 const exampleImages = [
   {
