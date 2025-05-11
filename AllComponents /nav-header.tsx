@@ -43,7 +43,7 @@ function NavHeader() {
 
   {/* Right-aligned buttons container */}
   <div className="ml-auto flex items-center gap-4">
-  <Link href="/cardio" > <CartBtn/> </Link>
+  <Link href="/cart" > <CartBtn/> </Link>
     <Link href="/login" > <ButtonHover10 /> </Link>
     
   </div>
