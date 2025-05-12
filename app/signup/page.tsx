@@ -83,7 +83,7 @@ export default function SignUpPage() {
               <Input 
                 id="email" 
                 type="email" 
-                placeholder="john.doe@example.com" 
+                placeholder="examplee@example.com" 
                 required 
                 className="border-gray-200 focus:border-purple-500 focus:ring-purple-500 transition-all duration-200"
               />
