@@ -58,7 +58,7 @@ export default function SignUpPage() {
                 <Label htmlFor="first-name" className="text-gray-700">First name</Label>
                 <Input 
                   id="first-name" 
-                  placeholder="John" 
+                  placeholder="Firstname" 
                   required 
                   className="border-gray-200 focus:border-purple-500 focus:ring-purple-500 transition-all duration-200"
                 />
@@ -67,7 +67,7 @@ export default function SignUpPage() {
                 <Label htmlFor="last-name" className="text-gray-700">Last name</Label>
                 <Input 
                   id="last-name" 
-                  placeholder="Doe" 
+                  placeholder="Lastname" 
                   required 
                   className="border-gray-200 focus:border-purple-500 focus:ring-purple-500 transition-all duration-200"
                 />
