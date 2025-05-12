@@ -98,8 +98,8 @@ const data: NavMenu = [
   {
     id: 6,
     type: "MenuItem",
-    label: "Deals & Promotions",
-    url: "/deals",
+    label: "About us",
+    url: "/about",
     children: [],
   },
 ];
