@@ -13,58 +13,93 @@ import Image from "next/image";
 import InputGroup from "@/components/ui/input-group";
 import ResTopNavbar from "./ResTopNavbar";
 import CartBtn from "./CartBtn";
+import { SparklesText } from "@/components/layout/Hero/sparkletitle";
 
 const data: NavMenu = [
   {
     id: 1,
-    label: "Shop",
+    label: "Books",
     type: "MenuList",
     children: [
       {
         id: 11,
-        label: "Men's clothes",
-        url: "/shop#men-clothes",
-        description: "In attractive and spectacular colors and designs",
+        label: "Fiction",
+        url: "/books#fiction",
+        description: "Novels, short stories, and literary works",
       },
       {
         id: 12,
-        label: "Women's clothes",
-        url: "/shop#women-clothes",
-        description: "Ladies, your style and tastes are important to us",
+        label: "Non-Fiction",
+        url: "/books#non-fiction",
+        description: "Biographies, history, science, and more",
       },
       {
         id: 13,
-        label: "Kids clothes",
-        url: "/shop#kids-clothes",
-        description: "For all ages, with happy and beautiful colors",
+        label: "Children's Books",
+        url: "/books#children",
+        description: "Picture books, early readers, and young adult",
       },
       {
         id: 14,
-        label: "Bags and Shoes",
-        url: "/shop#bag-shoes",
-        description: "Suitable for men, women and all tastes and styles",
+        label: "Textbooks & Education",
+        url: "/books#textbooks",
+        description: "Academic resources for all levels",
       },
     ],
   },
   {
     id: 2,
     type: "MenuItem",
-    label: "On Sale",
-    url: "/shop#on-sale",
+    label: "Bestsellers",
+    url: "/books#bestsellers",
     children: [],
   },
   {
     id: 3,
     type: "MenuItem",
-    label: "New Arrivals",
-    url: "/shop#new-arrivals",
+    label: "New Releases",
+    url: "/books#new-releases",
     children: [],
   },
   {
     id: 4,
+    type: "MenuList",
+    label: "Genres",
+    children: [
+      {
+        id: 41,
+        label: "Mystery & Thriller",
+        url: "/genres#mystery",
+      },
+      {
+        id: 42,
+        label: "Science Fiction & Fantasy",
+        url: "/genres#scifi",
+      },
+      {
+        id: 43,
+        label: "Romance",
+        url: "/genres#romance",
+      },
+      {
+        id: 44,
+        label: "History & Biography",
+        url: "/genres#history",
+      },
+    ],
+  },
+  {
+    id: 5,
     type: "MenuItem",
-    label: "Brands",
-    url: "/shop#brands",
+    label: "Authors",
+    url: "/authors",
+    children: [],
+  },
+  {
+    id: 6,
+    type: "MenuItem",
+    label: "About us",
+    url: "/about",
     children: [],
   },
 ];
@@ -84,7 +119,7 @@ const TopNavbar = () => {
               "text-2xl lg:text-[32px] mb-2 mr-3 lg:mr-10",
             ])}
           >
-            SHOP.CO
+            <SparklesText text="Bookify" />
           </Link>
         </div>
         <NavigationMenu className="hidden md:flex mr-2 lg:mr-7">
@@ -131,7 +166,7 @@ const TopNavbar = () => {
             />
           </Link>
           <CartBtn />
-          <Link href="/#signin" className="p-1">
+          <Link href="/login" className="p-1">
             <Image
               priority
               src="/icons/user.svg"

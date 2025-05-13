@@ -1,5 +1,5 @@
 import { LandingHero } from "@/pages/welcome";
-import { TestimonialsSectionDemo } from "@/AllComponents /testimony";
+import { TestimonialsSectionDemo } from "@/components/layout/testimony/testimony";
 import  LandingPageClient  from "@/pages/landing"
 import { Product } from "@/types/product.types";
 import ProductListSec from "@/components/common/ProductListSec";
