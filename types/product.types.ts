@@ -9,7 +9,7 @@ export type Discount = {
     srcUrl: string;
     gallery?: string[];
     price: number;
-    discount: Discount;
-    rating: number;
+    discount?: Discount;
+    rating?: number;
   };
   

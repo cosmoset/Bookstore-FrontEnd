@@ -7,3 +7,4 @@ interface Props {
 export default function LandingPageClient({ children }: Props) {
   return <div>{children}</div>;
 }
+

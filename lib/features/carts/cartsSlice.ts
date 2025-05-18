@@ -9,10 +9,10 @@ const calcAdjustedTotalPrice = (
   quantity?: number
 ): number => {
   return (
-    (totalPrice + data.discount.percentage > 0
-      ? Math.round(data.price - (data.price * data.discount.percentage) / 100)
-      : data.discount.amount > 0
-      ? Math.round(data.price - data.discount.amount)
+    (totalPrice + (data.discount?.percentage ?? 0) > 0
+      ? Math.round(data.price - (data.price * (data.discount?.percentage ?? 0)) / 100)
+      : (data.discount?.amount ?? 0) > 0
+      ? Math.round(data.price - (data.discount?.amount ?? 0))
       : data.price) * (quantity ? quantity : data.quantity)
   );
 };
@@ -59,8 +59,10 @@ export const cartsSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action: PayloadAction<CartItem>) => {
+      console.log("addToCart action dispatched:", action.payload);
       // if cart is empty then add
       if (state.cart === null) {
+        console.log("Cart is empty, adding item to cart");
         state.cart = {
           items: [action.payload],
           totalQuantities: action.payload.quantity,
@@ -70,6 +72,7 @@ export const cartsSlice = createSlice({
         state.adjustedTotalPrice =
           state.adjustedTotalPrice +
           calcAdjustedTotalPrice(state.totalPrice, action.payload);
+        console.log("New cart state:", state.cart);
         return;
       }
 

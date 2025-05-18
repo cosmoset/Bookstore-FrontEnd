@@ -1,8 +1,3 @@
-import {
-  newArrivalsData,
-  relatedProductData,
-  topSellingData,
-} from "@/app/page";
 import ProductListSec from "@/components/common/ProductListSec";
 import BreadcrumbProduct from "@/components/product-page/BreadcrumbProduct";
 import Header from "@/components/product-page/Header";
@@ -10,20 +5,27 @@ import Tabs from "@/components/product-page/Tabs";
 import { Product } from "@/types/product.types";
 import { notFound } from "next/navigation";
 
-const data: Product[] = [
-  ...newArrivalsData,
-  ...topSellingData,
-  ...relatedProductData,
-];
+async function getProduct(id: number): Promise<Product | undefined> {
+  try {
+    const response = await fetch(`http://localhost:8001/api/getProduct/${id}`);
+    if (!response.ok) {
+      
+      throw new Error(`Failed to fetch product: ${response.status}`);
+    }
+    const product: Product = await response.json();
+    return product;
+  } catch (error) {
+    console.error("Error fetching product:", error);
+    return undefined;
+  }
+}
 
-export default function ProductPage({
+export default async function ProductPage({
   params,
 }: {
   params: { slug: string[] };
 }) {
-  const productData = data.find(
-    (product) => product.id === Number(params.slug[0])
-  );
+  const productData = await getProduct(Number(params.slug[0]));
 
   if (!productData?.title) {
     notFound();
@@ -38,9 +40,6 @@ export default function ProductPage({
           <Header data={productData} />
         </section>
         <Tabs />
-      </div>
-      <div className="mb-[50px] sm:mb-20">
-        <ProductListSec title="You might also like" data={relatedProductData} />
       </div>
     </main>
   );

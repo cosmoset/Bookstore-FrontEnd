@@ -1,3 +1,6 @@
+"use client"
+
+import { useEffect, useState } from "react"
 import BreadcrumbShop from "@/components/shop-page/BreadcrumbShop";
 
 import {
@@ -10,7 +13,6 @@ import {
 import MobileFilters from "@/components/shop-page/filters/MobileFilters";
 import Filters from "@/components/shop-page/filters";
 import { FiSliders } from "react-icons/fi";
-import { newArrivalsData, relatedProductData, topSellingData } from "../page";
 import ProductCard from "@/components/common/ProductCard";
 import {
   Pagination,
@@ -22,7 +24,60 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 
+// Database product type matching the schema
+interface DBProduct {
+  ID: number
+  title: string
+  description: string | null
+  image: string | null
+  price: string
+  Category: string
+}
+
+// Utility functions
+const normalizePrice = (price: string | number): number => {
+  if (typeof price === 'number') return price;
+  return parseFloat(price.toString().replace(/[^\d.-]/g, '')) || 0;
+};
+
+const getImageUrl = (image: string | null) => {
+  return image?.startsWith('http') ? image : `/products${image || '/placeholder.jpg'}`;
+};
+
 export default function ShopPage() {
+  const [products, setProducts] = useState<DBProduct[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState("")
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch('http://localhost:8001/api/getProducts', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+
+        const data = await response.json()
+
+        if (!response.ok) {
+          throw new Error(data.message || 'Failed to fetch products')
+        }
+
+        console.log('Fetched products:', data) // Debug log
+        setProducts(data)
+      } catch (error) {
+        setError('Failed to load products')
+        console.error('Error fetching products:', error)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    fetchProducts()
+  }, [])
+
   return (
     <main className="pb-20">
       <div className="max-w-frame mx-auto px-4 xl:px-0">
@@ -39,12 +94,12 @@ export default function ShopPage() {
           <div className="flex flex-col w-full space-y-5">
             <div className="flex flex-col lg:flex-row lg:justify-between">
               <div className="flex items-center justify-between">
-                <h1 className="font-bold text-2xl md:text-[32px]">Casual</h1>
+                <h1 className="font-bold text-2xl md:text-[32px]">Products</h1>
                 <MobileFilters />
               </div>
               <div className="flex flex-col sm:items-center sm:flex-row">
                 <span className="text-sm md:text-base text-black/60 mr-3">
-                  Showing 1-10 of 100 Products
+                  Showing {products.length} Products
                 </span>
                 <div className="flex items-center">
                   Sort by:{" "}
@@ -61,15 +116,29 @@ export default function ShopPage() {
                 </div>
               </div>
             </div>
-            <div className="w-full grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
-              {[
-                ...relatedProductData.slice(1, 4),
-                ...newArrivalsData.slice(1, 4),
-                ...topSellingData.slice(1, 4),
-              ].map((product) => (
-                <ProductCard key={product.id} data={product} />
-              ))}
-            </div>
+
+            {isLoading ? (
+              <div className="text-center py-10">Loading products...</div>
+            ) : error ? (
+              <div className="text-center py-10 text-red-500">{error}</div>
+            ) : products.length === 0 ? (
+              <div className="text-center py-10">No products found</div>
+            ) : (
+              <div className="w-full grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+                {products.map((product) => (
+                  <ProductCard
+                    key={product.ID}
+                    data={{
+                      id: product.ID,
+                      title: product.title,
+                      srcUrl: getImageUrl(product.image),
+                      price: normalizePrice(product.price)
+                    }}
+                  />
+                ))}
+              </div>
+            )}
+
             <hr className="border-t-black/10" />
             <Pagination className="justify-between">
               <PaginationPrevious href="#" className="border border-black/10" />
@@ -83,51 +152,7 @@ export default function ShopPage() {
                     1
                   </PaginationLink>
                 </PaginationItem>
-                <PaginationItem>
-                  <PaginationLink
-                    href="#"
-                    className="text-black/50 font-medium text-sm"
-                  >
-                    2
-                  </PaginationLink>
-                </PaginationItem>
-                <PaginationItem className="hidden lg:block">
-                  <PaginationLink
-                    href="#"
-                    className="text-black/50 font-medium text-sm"
-                  >
-                    3
-                  </PaginationLink>
-                </PaginationItem>
-                <PaginationItem>
-                  <PaginationEllipsis className="text-black/50 font-medium text-sm" />
-                </PaginationItem>
-                <PaginationItem className="hidden lg:block">
-                  <PaginationLink
-                    href="#"
-                    className="text-black/50 font-medium text-sm"
-                  >
-                    8
-                  </PaginationLink>
-                </PaginationItem>
-                <PaginationItem className="hidden sm:block">
-                  <PaginationLink
-                    href="#"
-                    className="text-black/50 font-medium text-sm"
-                  >
-                    9
-                  </PaginationLink>
-                </PaginationItem>
-                <PaginationItem>
-                  <PaginationLink
-                    href="#"
-                    className="text-black/50 font-medium text-sm"
-                  >
-                    10
-                  </PaginationLink>
-                </PaginationItem>
               </PaginationContent>
-
               <PaginationNext href="#" className="border border-black/10" />
             </Pagination>
           </div>
