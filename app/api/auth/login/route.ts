@@ -4,34 +4,56 @@ import { cookies } from 'next/headers';
 const ADMIN_EMAIL = 'Nebiyou@gmail.com';
 const ADMIN_PASSWORD = '1234';
 
-export async function POST(request: Request) {
+export async function POST(req: Request) {
   try {
-    const body = await request.json();
-    const { email, password } = body;
+    const { email, password } = await req.json();
 
-    if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
-      const cookieStore = await cookies();
-      cookieStore.set('token', `${email}:${password}`, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: 'strict',
-        maxAge: 60 * 60 * 24, // 24 hours
-      });
-
-      return new NextResponse(JSON.stringify({ success: true }), {
-        status: 200,
-        headers: { 'Content-Type': 'application/json' },
-      });
+    // Validate input
+    if (!email || !password) {
+      return NextResponse.json(
+        { message: 'Missing required fields' },
+        { status: 400 }
+      );
     }
 
-    return new NextResponse(JSON.stringify({ error: 'Invalid credentials' }), {
-      status: 401,
-      headers: { 'Content-Type': 'application/json' },
+    // Forward request to Laravel backend
+    const response = await fetch('http://localhost:8001/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
     });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      return NextResponse.json(
+        { message: data.message || 'Login failed' },
+        { status: response.status }
+      );
+    }
+
+    // Store the token in an HTTP-only cookie
+    const headers = new Headers();
+    headers.append('Set-Cookie', `token=${data.token}; Path=/; HttpOnly; SameSite=Strict`);
+
+    return NextResponse.json(
+      { message: 'Login successful', user: data.user },
+      { 
+        status: 200,
+        headers
+      }
+    );
   } catch (error) {
-    return new NextResponse(JSON.stringify({ error: 'Internal server error' }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    console.error('Login error:', error);
+    return NextResponse.json(
+      { message: 'Internal server error' },
+      { status: 500 }
+    );
   }
 } 
