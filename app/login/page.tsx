@@ -9,7 +9,6 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { motion } from "framer-motion"
-import { toast } from "sonner"
 
 export default function LoginPage() {
   const router = useRouter()
@@ -18,6 +17,7 @@ export default function LoginPage() {
     password: ""
   })
   const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState("")
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target
@@ -25,10 +25,13 @@ export default function LoginPage() {
       ...prev,
       [id]: value
     }))
+    // Clear error when user starts typing
+    setError("")
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setError("")
 
     try {
       setIsLoading(true)
@@ -43,14 +46,18 @@ export default function LoginPage() {
       const data = await response.json()
 
       if (!response.ok) {
-        toast.error("Incorrect email or password")
+        setError("Incorrect email or password")
         return
       }
 
-      toast.success("Login successful! Redirecting to home page...")
-      router.push('/') 
+      // Only redirect if we have a successful response
+      if (data.message === 'Login successful') {
+        router.push('/')
+      } else {
+        setError("Incorrect email or password")
+      }
     } catch (error) {
-      toast.error("Failed to login. Please try again.")
+      setError("Incorrect email or password")
     } finally {
       setIsLoading(false)
     }
@@ -136,6 +143,15 @@ export default function LoginPage() {
                   className="border-gray-200 focus:border-purple-500 focus:ring-purple-500 transition-all duration-200"
                 />
               </motion.div>
+              {error && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-red-500 text-sm text-center"
+                >
+                  {error}
+                </motion.div>
+              )}
             </CardContent>
             <CardFooter>
               <motion.div

@@ -1,8 +1,4 @@
 import { NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
-
-const ADMIN_EMAIL = 'Nebiyou@gmail.com';
-const ADMIN_PASSWORD = '1234';
 
 export async function POST(req: Request) {
   try {
